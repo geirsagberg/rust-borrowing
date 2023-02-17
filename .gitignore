@@ -1,5 +1,6 @@
 bin/
 obj/
+!rust/**/bin/
 target/
 
 .vscode/*

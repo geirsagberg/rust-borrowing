@@ -1,5 +1,8 @@
 # Rust borrowing
 
+- What is Rust?
+- Why should I use Rust?
+
 ## Value vs reference
 
 - Value ~= owned
@@ -26,6 +29,8 @@
 
 ## Borrowing
 
+- Variables can be borrowed as a reference (&T).
+- A reference is like a pointer, but guaranteed to be valid.
 - You can have multiple borrows, but only one owner.
 - When the owner goes out of scope, the value will be dropped.
 
@@ -33,8 +38,8 @@
 
 1. Any borrow must last for a scope no greater than that of the owner.
 2. You may have one or the other of these two kinds of borrows, but not both at the same time:
-    * One or more references (&T) to a resource.
-    * Exactly one mutable reference (&mut T)
+   - One or more references (&T) to a resource.
+   - Exactly one mutable reference (&mut T)
 
 ## Pass by value
 
