@@ -32,4 +32,6 @@ impl JournalWriting<'_> {
     }
 }
 
-fn main() {}
+fn main() {
+
+}

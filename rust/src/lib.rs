@@ -1,3 +1,5 @@
+pub mod kitchen_supplies;
+
 use std::fmt::Debug;
 
 /// Moves a value into the function, consuming it.
