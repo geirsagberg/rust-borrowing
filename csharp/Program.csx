@@ -1,8 +1,11 @@
-static int Roll()
+using Internal;
+
+private static int Roll()
 {
-    var random = new Random();
-    var result = random.Next(1, 7);
-    Console.WriteLine(result);
+    Random random = new();
+    int result = random.Next(1, 7);
+    Console.WriteLine("Rolled: " + result);
+    return result;
 }
 
 Roll();

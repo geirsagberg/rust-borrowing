@@ -34,4 +34,18 @@ impl FloppyDisk {
     }
 }
 
-fn main() {}
+fn main() {
+    let mut drive = DiskDrive { disk: None };
+    let disk1 = FloppyDisk::new("Civilization - Disk 1");
+
+    drive.insert(disk1);
+
+    let disk1_ejected = drive.eject().unwrap();
+    let disk2 = disk1_ejected.clone();
+    drive.insert(disk2);
+    drive.overwrite("Civilization - Disk 2");
+    let disk2_ejected = drive.eject();
+
+    println!("{:?}", disk1_ejected);
+    println!("{:?}", disk2_ejected);
+}
