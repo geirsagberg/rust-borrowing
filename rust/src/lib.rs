@@ -1,9 +1,17 @@
-use std::any::Any;
+use std::fmt::Debug;
 
-pub fn eat(_: impl Any) {
-    println!("Yum!");
+/// Moves a value into the function, consuming it.
+pub fn eat(something: impl Debug) {
+    println!("{:?}! Yum!", something);
 }
 
-pub fn inspect(_: &impl Any) {
-    println!("Inspecting...");
+/// Moves a value into the function, then returns it.
+pub fn handle<T: Debug>(something: T) -> T {
+    println!("Handling {:?}...", something);
+    return something;
+}
+
+/// Borrows a reference to something for inspection purposes.
+pub fn inspect(something: &impl Debug) {
+    println!("Inspecting {:?}...", something);
 }
