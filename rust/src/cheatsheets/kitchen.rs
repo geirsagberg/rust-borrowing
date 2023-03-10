@@ -16,7 +16,7 @@ fn make_cake(_eggs: Vec<Egg>, _flour: Flour, _sugar: Sugar) -> Cake {
     Cake
 }
 
-pub fn main() {
+pub fn main2() {
     // Owned values on the stack
     let flour = Flour;
     let sugar = Sugar;
@@ -31,9 +31,11 @@ pub fn main() {
     eat(cake);
 }
 
+struct Cheese;
+
 pub fn main() {
-    let owned_cake = Cake;
-    let borrowed_cake = &owned_cake;
-    let mut moved_cake = owned_cake;
-    let mut mutably_borrowed_cake = &mut moved_cake;
+    let owned_cheese = Cheese;
+    let borrowed_cheese = &owned_cheese;
+    let mut moved_cheese = owned_cheese;
+    let mut mutably_borrowed_cheese = &mut moved_cheese;
 }
