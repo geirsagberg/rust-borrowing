@@ -19,11 +19,18 @@ fn print_hello() {
 }
 
 fn safe_hello() {
-    let hello = String::from("Hello");
+    let hello = "Hello TDC!";
+    println!("{}", hello);
+}
+
+fn safe_hello_mutation() {
+    let mut hello = String::from("Hello");
+    hello += " TDC!";
     println!("{}", hello);
 }
 
 fn main() {
     print_hello();
     safe_hello();
+    safe_hello_mutation();
 }

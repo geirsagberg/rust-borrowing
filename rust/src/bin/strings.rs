@@ -1,3 +1,5 @@
+#![allow(unused_variables, dead_code)]
+
 struct StringBuilder {
     buffer: Vec<u8>,
 }

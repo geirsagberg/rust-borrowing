@@ -1,3 +1,5 @@
+#![allow(unused_variables, dead_code)]
+
 pub mod kitchen_supplies;
 
 use std::fmt::Debug;

@@ -44,7 +44,7 @@ fn main() {
     let disk2 = disk1_ejected.clone();
     drive.insert(disk2);
     drive.overwrite("Civilization - Disk 2");
-    let disk2_ejected = drive.eject();
+    let disk2_ejected = drive.eject().unwrap();
 
     println!("{:?}", disk1_ejected);
     println!("{:?}", disk2_ejected);

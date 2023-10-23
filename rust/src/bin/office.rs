@@ -1,3 +1,5 @@
+#![allow(unused_variables, dead_code)]
+
 #[derive(Clone, Debug)]
 struct FloppyDisk {
     data: String,

@@ -1,3 +1,5 @@
+#![allow(unused_variables, dead_code)]
+
 mod health_platform {
     pub struct PatientJournal {
         entries: Vec<String>,
@@ -43,19 +45,5 @@ mod health_platform {
 use health_platform::*;
 
 fn main() {
-    let mut journal = PatientJournal::new("John Doe");
-
-    let patient_read_journal = JournalReading::new(&journal);
-    patient_read_journal.print();
-
-    let doctor_read_journal = JournalReading::new(&journal);
-    doctor_read_journal.print();
-
-    {
-        let mut doctor_write_journal = JournalWriting::new(&mut journal);
-        doctor_write_journal.add_entry("Patient is feeling better");
-    }
-
-    let patient_read_journal = JournalReading::new(&journal);
-    patient_read_journal.print();
+    let journal = PatientJournal::new("John Doe");
 }

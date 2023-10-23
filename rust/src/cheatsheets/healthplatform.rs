@@ -34,12 +34,11 @@ impl JournalWriting<'_> {
 
 fn main() {
     let mut journal = PatientJournal::new("John Doe");
-    {
-        let mut doctor_write = JournalWriting {
-            journal: &mut journal,
-        };
-        doctor_write.add_entry("Patient seems to be getting better");
-    }
+
+    let mut doctor_write = JournalWriting {
+        journal: &mut journal,
+    };
+    doctor_write.add_entry("Patient seems to be getting better");
 
     let patient_read = JournalReading { journal: &journal };
     patient_read.print();
@@ -47,12 +46,10 @@ fn main() {
     let doctor_read = JournalReading { journal: &journal };
     doctor_read.print();
 
-    {
-        let mut doctor_write = JournalWriting {
-            journal: &mut journal,
-        };
-        doctor_write.add_entry("Patient seems to be getting worse");
-    }
+    let mut doctor_write = JournalWriting {
+        journal: &mut journal,
+    };
+    doctor_write.add_entry("Patient seems to be getting worse");
 
     let patient_read = JournalReading { journal: &journal };
     patient_read.print();
