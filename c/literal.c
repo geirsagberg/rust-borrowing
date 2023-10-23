@@ -4,7 +4,7 @@
 void printHello()
 {
   char *str = "Hello";
-  printf("%s\n", str);
+  printf("%s", str);
 }
 
 int main()

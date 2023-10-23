@@ -45,5 +45,17 @@ mod health_platform {
 use health_platform::*;
 
 fn main() {
-    let journal = PatientJournal::new("John Doe");
+    let mut journal = PatientJournal::new("John Doe");
+
+    let patient_reading = JournalReading::new(&journal);
+    patient_reading.print();
+
+    let mut doctor_writing = JournalWriting::new(&mut journal);
+    doctor_writing.add_entry("Patient is feeling much better.");
+
+    let patient_reading_2 = JournalReading::new(&journal);
+    patient_reading_2.print();
+
+    let mut doctor_writing_2 = JournalWriting::new(&mut journal);
+    doctor_writing_2.add_entry("Some issues");
 }
